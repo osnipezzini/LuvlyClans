@@ -13,10 +13,10 @@ namespace LuvlyClans.Patches
         [HarmonyPrefix]
         public static void GameStart()
         {
-            LuvlyClans.m_is_server = ZNet.instance.IsServer() || ZNet.instance.IsDedicated() || ZNet.instance.IsLocalInstance();
-            LuvlyClans.m_is_client = ZNet.instance.IsClientInstance();
+            Startup.m_is_server = ZNet.instance.IsServer() || ZNet.instance.IsDedicated() || ZNet.instance.IsLocalInstance();
+            Startup.m_is_client = ZNet.instance.IsClientInstance();
 
-            if (LuvlyClans.m_is_server)
+            if (Startup.m_is_server)
             {
                 Log.LogInfo("Server instance found");
 
@@ -25,7 +25,7 @@ namespace LuvlyClans.Patches
                 RegisterServerRPCs();
             }
 
-            if (LuvlyClans.m_is_client)
+            if (Startup.m_is_client)
             {
                 Log.LogInfo("Client instance found");
 

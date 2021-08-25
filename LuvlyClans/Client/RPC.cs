@@ -22,7 +22,7 @@ namespace LuvlyClans.Client
                 if (msg != null && msg != "" && msg != "no peer")
                 {
                     Log.LogInfo("Received Clans from server");
-                    LuvlyClans.m_clans_client = JSON.DeserializeObject<Clans>(msg);
+                    Startup.m_clans_client = JSON.DeserializeObject<Clans>(msg);
                     return;
                 }
 

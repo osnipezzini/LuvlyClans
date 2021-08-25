@@ -38,7 +38,7 @@ namespace LuvlyClans.Server
                         }
 
                         Log.LogInfo("Writing updated clans to db");
-                        DB.Write(LuvlyClans.GetServerClansJSON());
+                        DB.Write(Startup.GetServerClansJSON());
                     } else
                     {
                         Log.LogWarning($"Player [{peerPlayerName}::{peerPlayerID}] does not exist in clans DB, adding to Wildlings");
@@ -52,10 +52,10 @@ namespace LuvlyClans.Server
                         syncFlag = true;
 
                         Log.LogInfo("Writing updated clans to db");
-                        DB.Write(LuvlyClans.GetServerClansJSON());
+                        DB.Write(Startup.GetServerClansJSON());
                     }
 
-                    zpkg.Write(LuvlyClans.GetServerClansJSON());
+                    zpkg.Write(Startup.GetServerClansJSON());
 
                     ZRoutedRpc.instance.InvokeRoutedRPC(syncFlag ? 0L : sender, "ResponseClans", new object[] { zpkg });
 

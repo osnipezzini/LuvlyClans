@@ -21,11 +21,11 @@ namespace LuvlyClans
   [BepInPlugin(PluginGUID, PluginName, PluginVersion)]
   [BepInDependency(Main.ModGuid)]
   [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.Minor)]
-  internal class LuvlyClans : BaseUnityPlugin
+  internal class Startup : BaseUnityPlugin
   {
-        public const string PluginGUID = "com.aschenbuilder.luvlyclans";
-        public const string PluginName = "LuvlyClans";
-        public const string PluginVersion = "0.0.1";
+        public const string PluginGUID = "com.ellitedev.elliteclans";
+        public const string PluginName = "ElliteClans";
+        public const string PluginVersion = "1.0.0";
 
         public static string m_path_config = BepInEx.Paths.ConfigPath;
         public const string m_path_db = "luvly.clans.json";

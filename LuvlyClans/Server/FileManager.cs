@@ -9,6 +9,6 @@ namespace LuvlyClans.Server
     class FileManager
     {
         public static string bpxConfigPath = BepInEx.Paths.BepInExConfigPath;
-        public static string lcConfigPath = System.IO.Path.Combine(bpxConfigPath, LuvlyClans.PluginGUID + ".cfg");
+        public static string lcConfigPath = System.IO.Path.Combine(bpxConfigPath, Startup.PluginGUID + ".cfg");
     }
 }

@@ -7,8 +7,8 @@ namespace ClansHelper
 {
     internal class ClansHelper
     {
-        internal static bool m_has_clans_server = LuvlyClans.LuvlyClans.m_clans_server != null && LuvlyClans.LuvlyClans.m_clans_server.m_clans.Length > 0;
-        internal static bool m_has_clans_client = LuvlyClans.LuvlyClans.m_clans_client != null && LuvlyClans.LuvlyClans.m_clans_client.m_clans.Length > 0;
+        internal static bool m_has_clans_server = LuvlyClans.Startup.m_clans_server != null && LuvlyClans.Startup.m_clans_server.m_clans.Length > 0;
+        internal static bool m_has_clans_client = LuvlyClans.Startup.m_clans_client != null && LuvlyClans.Startup.m_clans_client.m_clans.Length > 0;
 
         public static Member GetClanMemberFromClanByPlayerID(Clan clan, long playerID)
         {
@@ -42,7 +42,7 @@ namespace ClansHelper
 
         public static Clan GetClanByPlayerID(long playerID, bool isClient)
         {
-            Clans clans = isClient ? LuvlyClans.LuvlyClans.m_clans_client : LuvlyClans.LuvlyClans.m_clans_server;
+            Clans clans = isClient ? LuvlyClans.Startup.m_clans_client : LuvlyClans.Startup.m_clans_server;
             bool hasClans = isClient ? m_has_clans_client : m_has_clans_server;
 
             if (hasClans)
@@ -55,7 +55,7 @@ namespace ClansHelper
 
         public static Clan GetClanByPlayerName(string playerName, bool isClient)
         {
-            Clans clans = isClient ? LuvlyClans.LuvlyClans.m_clans_client : LuvlyClans.LuvlyClans.m_clans_server;
+            Clans clans = isClient ? LuvlyClans.Startup.m_clans_client : LuvlyClans.Startup.m_clans_server;
             bool hasClans = isClient ? m_has_clans_client : m_has_clans_server;
 
             if (hasClans)
@@ -68,7 +68,7 @@ namespace ClansHelper
 
         public static Clan GetClanByClanName(string clanName, bool isClient)
         {
-            Clans clans = isClient ? LuvlyClans.LuvlyClans.m_clans_client : LuvlyClans.LuvlyClans.m_clans_server;
+            Clans clans = isClient ? LuvlyClans.Startup.m_clans_client : LuvlyClans.Startup.m_clans_server;
             bool hasClans = isClient ? m_has_clans_client : m_has_clans_server;
 
             if (hasClans)
@@ -185,7 +185,7 @@ namespace ClansHelper
             {
                 Clan newWildlings = BuildClan("Wildlings", new Member[] { member });
 
-                AddClan(LuvlyClans.LuvlyClans.m_clans_server, newWildlings);
+                AddClan(LuvlyClans.Startup.m_clans_server, newWildlings);
             } else
             {
                 AddClanMember(wildlings, member);
